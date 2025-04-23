@@ -38,9 +38,10 @@ Internal DC/DC regulator should be enabled for this board, however vddh regulato
 ## GATTs
 
 Base UUID: 00000001-8334-43-97-af7e-bfca78d70c67
+
 This id must only be used for testing.
 
-* SENSOR_READ 0x0002: When notify is active XYZ samples are sent. As each value is 10 bits the data is compressed so that each sample fits in 4 byte word. So the format is 00<10 bit X><10 bit Y><10 bit Z>.
+* SENSOR_READ 0x0002: When notify is active XYZ samples are sent. As each component is 10 bits the data is compressed so that each sample fits in a 4 byte word. The format is: 00<10 bit X><10 bit Y><10 bit Z>.
 
 * STEP_COUNTER 0x0003: When notify is active step counter is sent as a 16 bit value
 
@@ -48,7 +49,7 @@ This id must only be used for testing.
 
 * ODR_AVG 0x0005: Current does nothing
 
-* FS 0x0006: Full scale output, 0 => 2g, 1 => 16g, 2 => 4g, 3 => 8). 2g is default. Set FS register in datasheet for more information.
+* FS 0x0006: Full scale output, 0 => 2g, 1 => 16g, 2 => 4g, 3 => 8g. 2g is default. See FS register in datasheet for more information.
 
 * HP_FILTER 0x0007: Set high pass filter (FDS_SLOPE bit), 1 => on, 0 => off
 
