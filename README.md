@@ -40,7 +40,7 @@ Internal DC/DC regulator should be enabled for this board, however vddh regulato
 Base UUID: 00000001-8334-43-97-af7e-bfca78d70c67
 This id must only be used for testing.
 
-* SENSOR_READ 0x0002: When notify is active XYZ samples are sent, see below for format.
+* SENSOR_READ 0x0002: When notify is active XYZ samples are sent. As each value is 10 bits the data is compressed so that each sample fits in 4 byte word. So the format is 00<10 bit X><10 bit Y><10 bit Z>.
 
 * STEP_COUNTER 0x0003: When notify is active step counter is sent as a 16 bit value
 
